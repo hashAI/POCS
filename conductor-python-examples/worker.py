@@ -74,7 +74,7 @@ def execute(task: Task) -> TaskResult:
     csv_url = task.input_data.get("csv_url")
     print(csv_url)
     df = pd.read_csv(csv_url)
-    file_path = "POCS/conductor-python-examples/worker_output_"+str(datetime.datetime.now())
+    file_path = "POCS/conductor-python-examples/worker_output/addresses_"+str(datetime.datetime.now().timestamp()+".json")
     try:
         commit_message = "Added worker output"
         repo_path = "POCS/"
